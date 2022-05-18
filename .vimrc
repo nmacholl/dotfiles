@@ -1,11 +1,22 @@
 set number
-set encoding=utf8
+set encoding=utf-8
 set nocompatible
 set backspace=indent,eol,start
 set rtp+=~/.vim/bundle/Vundle.vim
-set mouse=a
 set nobackup
 set nowritebackup
+
+" Tab Behaviors
+filetype indent off
+set smartindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" Character Overrides
+set list
+set listchars=lead:░,trail:░,nbsp:▁,
 
 call vundle#begin()
 
