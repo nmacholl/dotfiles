@@ -42,6 +42,7 @@ let g:airline_solarized_bg='dark'
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+let g:coc_disable_transparent_cursor = 1
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
