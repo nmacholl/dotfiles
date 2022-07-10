@@ -31,7 +31,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'frazrepo/vim-rainbow'
-Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 
