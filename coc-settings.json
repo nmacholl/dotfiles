@@ -1,0 +1,13 @@
+{
+  // Run prettier (and others)
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "python",
+    "markdown",
+    "Markdown"
+  ],
+  "coc.preferences.jumpCommand": "tabe",
+
+  "diagnostic.refreshOnInsertMode": true
+}
