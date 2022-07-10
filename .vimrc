@@ -26,11 +26,11 @@ Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
-Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'frazrepo/vim-rainbow'
 
 call vundle#end()
 
@@ -242,9 +242,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
-" Polygot
-let g:python_highlight_all = 1
-
 " Solarized
 syntax on
 set background=dark
@@ -258,6 +255,9 @@ let g:syntastic_check_on_wq = 1
 
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_cpp_checkers = ['clang-format']
+
+" Rainbow
+let g:rainbow_active = 1
 
 " Miscellaneous
 filetype plugin indent on
