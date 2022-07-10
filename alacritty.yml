@@ -1,6 +1,10 @@
 window:
+  dimensions:
+    columns: 200
+    lines: 50
+
   # Window title
-  title: Alacritty
+  title: Alacritty Terminal
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
@@ -15,7 +19,12 @@ scrolling:
 
 font:
   # Point size
+  normal:
+    family: Hack
+    style: Regular
+
   size: 13.0
+  use_thin_strokes: true
 
 # Colors (Solarized Dark)
 colors:
@@ -54,5 +63,6 @@ colors:
 cursor:
   style:
     shape: Block
+    blinking: On
 
 live_config_reload: true
