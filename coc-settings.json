@@ -3,11 +3,10 @@
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "json",
+    "markdown",
     "python",
-    "markdown"
+    "rust"
   ],
-  "coc.preferences.jumpCommand": "tabe",
-
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
   "python.formatting.provider": "black",
@@ -15,7 +14,7 @@
   "python.linting.pylintPath": "pylint",
   "languageserver": {
       "rust": {
-          "command": "rust-analyzer",
+          "command": "coc-rust-analyzer",
           "filetypes": ["rust"],
           "rootPatterns": ["Cargo.toml"]
       }
