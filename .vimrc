@@ -34,11 +34,10 @@ Plugin 'frazrepo/vim-rainbow'
 
 call vundle#end()
 
-" Airline
+"" Airline
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
-
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -57,6 +56,7 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
+let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
@@ -66,7 +66,10 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ' '
+
+" airline section Overrides
+let g:airline_section_z = '%p%% %l:%c'
 
 " CoC
 set cmdheight=2
@@ -220,7 +223,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " FZF
-set rtp+=/usr/bin/fzf
+set rtp+=fzf
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
