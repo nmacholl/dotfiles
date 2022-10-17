@@ -7,11 +7,15 @@
     "python",
     "rust"
   ],
+  // Python
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
   "python.formatting.provider": "black",
   "pyright.organizeimports.provider": "isort",
   "python.linting.pylintPath": "pylint",
+  // Rust
+  "rust-analyzer.cargo.autoreload": true,
+  "rust-analyzer.diagnostics.enable": true,
   "languageserver": {
       "rust": {
           "command": "coc-rust-analyzer",

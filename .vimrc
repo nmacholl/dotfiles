@@ -14,6 +14,12 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" Terminal Mode
+tnoremap <Esc> <C-\><C-n><CR>
+
+" Buffer Switching
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
 " Character Overrides
 set list
 set listchars=lead:░,trail:░,nbsp:▁,
@@ -245,11 +251,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
-" Solarized
-syntax on
-set background=dark
-colorscheme solarized
-
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -261,6 +262,14 @@ let g:syntastic_cpp_checkers = ['clang-format']
 
 " Rainbow
 let g:rainbow_active = 1
+
+" Solarized
+syntax on
+set background=dark
+colorscheme solarized
+
+highlight CocFloating ctermbg=0
+highlight CocInlayHint ctermbg=8 ctermfg=10
 
 " Miscellaneous
 filetype plugin indent on
