@@ -24,7 +24,6 @@ font:
     style: Regular
 
   size: 13.0
-  use_thin_strokes: true
 
 # Colors (Solarized Dark)
 colors:
