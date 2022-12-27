@@ -1,0 +1,10 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "markdown",
+    "python",
+    "rust"
+  ],
+  "diagnostic.refreshOnInsertMode": true
+}

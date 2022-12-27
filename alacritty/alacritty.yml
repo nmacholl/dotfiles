@@ -20,7 +20,7 @@ scrolling:
 font:
   # Point size
   normal:
-    family: Hack
+    family: Hack Nerd Font
     style: Regular
 
   size: 13.0
@@ -39,7 +39,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#073642' # base02
+    black:   '#002b36' # base02
     red:     '#dc322f' # red
     green:   '#859900' # green
     yellow:  '#b58900' # yellow
