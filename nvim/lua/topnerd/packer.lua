@@ -25,16 +25,7 @@ return require("packer").startup(function(use)
     }
 
     -- Lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            require'lualine'.setup {
-                options = {
-                    theme = "selenized", -- or "selenized", but "auto" should pick it up.
-                },
-            }
-        end,
-    }
+    use 'nvim-lualine/lualine.nvim'
 
     -- Git
     use "tpope/vim-fugitive"
