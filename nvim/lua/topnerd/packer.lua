@@ -17,12 +17,27 @@ return require("packer").startup(function(use)
     use  { "junegunn/fzf", run = "./install --bin", }
 
     -- Color Theme
-    use "tjdevries/colorbuddy.vim"
-    use "svrana/neosolarized.nvim"
+    use {
+        'loganswartz/selenized.nvim',
+        requires = {
+            'rktjmp/lush.nvim',
+        },
+    }
 
     -- Airline
-    use "vim-airline/vim-airline"
-    use "vim-airline/vim-airline-themes"
+    -- use "vim-airline/vim-airline"
+    -- use { "vim-airline/vim-airline-themes", after="vim-airline" }
+    use {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require'lualine'.setup {
+                options = {
+                    theme = "auto", -- or "selenized", but "auto" should pick it up.
+                    -- Omitting the "theme" option entirely will also default to "auto"
+                },
+            }
+        end,
+    }
 
     -- Git
     use "tpope/vim-fugitive"
