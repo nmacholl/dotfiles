@@ -36,9 +36,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Configuration
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
 function vim.api.nvim_create_augroups(definitions)
     for group_name, definition in pairs(definitions) do
         vim.api.nvim_command('augroup '..group_name)

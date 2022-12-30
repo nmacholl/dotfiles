@@ -24,16 +24,13 @@ return require("packer").startup(function(use)
         },
     }
 
-    -- Airline
-    -- use "vim-airline/vim-airline"
-    -- use { "vim-airline/vim-airline-themes", after="vim-airline" }
+    -- Lualine
     use {
         'nvim-lualine/lualine.nvim',
         config = function()
             require'lualine'.setup {
                 options = {
-                    theme = "auto", -- or "selenized", but "auto" should pick it up.
-                    -- Omitting the "theme" option entirely will also default to "auto"
+                    theme = "selenized", -- or "selenized", but "auto" should pick it up.
                 },
             }
         end,
@@ -48,6 +45,5 @@ return require("packer").startup(function(use)
 
     -- CoC
     use { "neoclide/coc.nvim", branch="release" }
-
 end
 )
