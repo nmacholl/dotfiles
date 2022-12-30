@@ -6,5 +6,16 @@ vim.cmd [[
 ]]
 
 -- Customizations
-vim.api.nvim_set_hl(0, 'CursorLine', { bg="#2d5b69", fg="#ed8949",} )
-vim.api.nvim_set_hl(0, 'Directory', { bg="", fg="#fd9456", bold=true, } )
+vim.api.nvim_set_hl(0, "CursorLine", { bg="#2d5b69", fg="#ed8949",} )
+vim.api.nvim_set_hl(0, "Directory", { bg="", fg="#fd9456", bold=true, } )
+
+-- Coc Overrides
+vim.api.nvim_set_hl(0, "CocFadeOut", { fg="#72898f" } )
+vim.api.nvim_set_hl(0, "CocWarningSign", { standout=true, fg="#b58900" } )
+vim.api.nvim_set_hl(0, "CocWarningHighlight", { } )
+vim.api.nvim_set_hl(0, "CocErrorSign", { standout=true , fg="#cb4b16" } )
+vim.api.nvim_set_hl(0, "CocErrorHighlight", { } )
+vim.api.nvim_set_hl(0, "CocInfoSign", { standout=true , fg="#268bd2" } )
+vim.api.nvim_set_hl(0, "CocInfoHighlight", { } )
+vim.api.nvim_set_hl(0, "CocHintSign", { standout=true , fg="#839496" } )
+vim.api.nvim_set_hl(0, "CocHintHighlight", { } )

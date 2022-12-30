@@ -49,7 +49,6 @@ colors:
     white:   "#eee8d5" # white
 
   bright:
-    bright:
     black:   '#002b36' # base03
     red:     '#cb4b16' # orange
     green:   '#586e75' # base01
