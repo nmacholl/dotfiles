@@ -1,0 +1,29 @@
+add_newline = false
+scan_timeout = 10
+format = """$directory$git_branch$status
+$python $character 
+"""
+
+[character]
+format = '$symbol'
+success_symbol = '[❯:](bold magenta)'
+error_symbol = '[❯:](bold magenta)'
+
+[directory]
+style = "bold yellow"
+truncate_to_repo = true
+truncation_symbol = "../"
+
+[python]
+format = "[$virtualenv]($style)"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+only_attached = true
+truncation_length = 30
+
+[status]
+format = "[$status $common_meaning]($style)"
+style = "red"
+disabled = false
+
