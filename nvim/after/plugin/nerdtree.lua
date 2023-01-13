@@ -8,6 +8,7 @@ vim.g.NERDTreeShowHidden = true
 vim.g.NERDTreeMinimalUI = true
 vim.g.NERDTreeMinimalMenu= true
 vim.g.NERDTreeNaturalSort = true
+vim.g.NERDTreeChDirMode = 2
 
 
 -- Open NERDTree if no file is opened directly.
