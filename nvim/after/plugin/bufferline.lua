@@ -2,8 +2,14 @@
 require("bufferline").setup{
     options = {
         numbers = "buffer_id",
-        show_buffer_icons = false,
-        sort_by = "id",
+        show_buffer_icons = true,
+        diagnostics = "coc",
+        enforce_regular_tabs = true,
+        hover = {
+            enabled = true,
+            delay = 200,
+            reveal = {'close'},
+        },
     },
 }
 

@@ -10,25 +10,28 @@ return require("packer").startup(function(use)
     use "preservim/nerdtree"
     use "ryanoasis/vim-devicons"
 
+    -- Aerial
+    use "stevearc/aerial.nvim"
+
     -- Undo Tree
     use "mbbill/undotree"
 
     -- Fuzzy Finder
     -- use  { "junegunn/fzf", run = "./install --bin", }
-    use  { 'ibhagwan/fzf-lua',
-            requires = { 'nvim-tree/nvim-web-devicons' }
+    use  { "ibhagwan/fzf-lua",
+            requires = { "nvim-tree/nvim-web-devicons" }
          }
 
     -- Color Theme
     use {
-        'loganswartz/selenized.nvim',
+        "loganswartz/selenized.nvim",
         requires = {
-            'rktjmp/lush.nvim',
+            "rktjmp/lush.nvim",
         },
     }
 
     -- Lualine
-    use 'nvim-lualine/lualine.nvim'
+    use "nvim-lualine/lualine.nvim"
 
     -- Git
     use "tpope/vim-fugitive"
@@ -38,6 +41,6 @@ return require("packer").startup(function(use)
     use "akinsho/bufferline.nvim"
 
     -- CoC
-    use { "neoclide/coc.nvim", branch="release" }
+    use { "neoclide/coc.nvim", branch="master", run="yarn install --frozen-lockfile"}
 end
 )
