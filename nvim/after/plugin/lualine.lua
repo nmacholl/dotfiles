@@ -4,6 +4,7 @@ require('lualine').setup {
         theme = "selenized",
     },
     extensions = {
+        "aerial",
         "fugitive",
         "fzf",
         "nerdtree",
