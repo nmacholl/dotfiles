@@ -14,4 +14,4 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Window Management
 vim.keymap.set("n", "<C-W>z", ":wincmd _<CR>")
-vim.keymap.set("n", "<C-W>Z", ":wincmd =<CR>")
+vim.keymap.set("n", "<C-W>x", ":wincmd =<CR>")

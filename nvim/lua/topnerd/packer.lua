@@ -42,5 +42,8 @@ return require("packer").startup(function(use)
 
     -- CoC
     use { "neoclide/coc.nvim", branch="master", run="yarn install --frozen-lockfile"}
+
+    -- Toggleterm
+    use {"akinsho/toggleterm.nvim", tag = '*'}
 end
 )
