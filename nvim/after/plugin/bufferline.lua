@@ -1,8 +1,7 @@
 -- Setup
 require("bufferline").setup{
     options = {
-        numbers = "buffer_id",
-        show_buffer_icons = true,
+        show_buffer_icons = false,
         diagnostics = "coc",
         enforce_regular_tabs = true,
         hover = {
@@ -12,7 +11,7 @@ require("bufferline").setup{
         },
         groups = {
             items = {
-                require("bufferline.groups").builtin.pinned:with({ icon = "·" })
+                require("bufferline.groups").builtin.pinned:with({ icon = "⋄" })
             }
         }
     },
