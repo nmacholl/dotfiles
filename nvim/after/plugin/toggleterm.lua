@@ -1,7 +1,6 @@
 -- Setup
 require("toggleterm").setup{
     autochdir = true,
-    shade_filetypes = { "none", "fzf" }
 }
 local Terminal = require("toggleterm.terminal").Terminal
 
