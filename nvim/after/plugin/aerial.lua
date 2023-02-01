@@ -6,7 +6,7 @@ require('aerial').setup({
         vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
     end,
     layout = {
-        default_direction = "prefer_left",
+        default_direction = "prefer_right",
     },
     lsp = {
       diagnostics_trigger_update = false,

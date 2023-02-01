@@ -39,7 +39,19 @@ function fzf_git_files()
     )
 end
 
+function fzf_grep_word()
+    local cwd = vim.fn.getcwd()
+    require('fzf-lua').grep_cword(
+        {
+            cwd = cwd,
+            noremap = true,
+            slient = true,
+        }
+    )
+end
+
 -- Shortcuts
 vim.api.nvim_set_keymap('n', '<leader><tab>', "<cmd>lua fzf_files()<CR>", {})
 vim.api.nvim_set_keymap('n', '<leader>gr', "<cmd>lua fzf_grep_native()<CR>", {})
+vim.api.nvim_set_keymap('n', '<leader>gw', "<cmd>lua fzf_grep_word()<CR>", {})
 vim.api.nvim_set_keymap('n', '<leader>gg', "<cmd>lua fzf_git_files()<CR>", {})

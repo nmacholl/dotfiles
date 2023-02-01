@@ -1,7 +1,6 @@
 -- Shortcuts
 vim.keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>")
 vim.keymap.set("n", "<C-f>", ":NERDTreeFind<CR>")
-vim.keymap.set("n", "<C-n>", ":NERDTreeFocus<CR>")
 
 -- Options
 vim.g.NERDTreeShowHidden = true

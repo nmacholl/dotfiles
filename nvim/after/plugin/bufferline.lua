@@ -22,3 +22,5 @@ require("bufferline").setup{
 vim.keymap.set("n", "<leader>o", ":BufferLinePick<CR>")
 vim.keymap.set("n", "<leader>p", ":BufferLineTogglePin<CR>")
 vim.keymap.set("n", "<leader>q", ":BufferLinePickClose<CR>")
+vim.keymap.set("n", "<leader>q[", ":BufferLineCloseLeft<CR>")
+vim.keymap.set("n", "<leader>q]", ":BufferLineCloseRight<CR>")
