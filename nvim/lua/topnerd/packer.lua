@@ -6,9 +6,13 @@ return require("packer").startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
     use "nvim-treesitter/nvim-treesitter-context"
 
-    -- NERDTree
-    use "preservim/nerdtree"
-    use "ryanoasis/vim-devicons"
+    -- NVIM Tree
+    use { 'nvim-tree/nvim-tree.lua',
+            requires = {
+                'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            },
+            tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        }
 
     -- Aerial
     use "stevearc/aerial.nvim"

@@ -7,6 +7,6 @@ require('lualine').setup {
         "aerial",
         "fugitive",
         "fzf",
-        "nerdtree",
+        "nvim-tree",
     },
 }
