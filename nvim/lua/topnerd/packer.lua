@@ -44,8 +44,13 @@ return require("packer").startup(function(use)
     -- Bufferline
     use "akinsho/bufferline.nvim"
 
-    -- CoC
-    use { "neoclide/coc.nvim", branch="release" }
+    -- LSP
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        "tamago324/nlsp-settings.nvim",
+    }
 
     -- Toggleterm
     use {"akinsho/toggleterm.nvim", tag = '*'}
