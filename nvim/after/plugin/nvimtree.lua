@@ -1,10 +1,8 @@
 -- Setup
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin=1
-
 require("nvim-tree").setup(
     {
         sync_root_with_cwd = true,
+        reload_on_bufenter = true,
         renderer = {
             icons = {
                 git_placement = "after",
@@ -39,9 +37,8 @@ vim.keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>")
 local function open_nvim_tree(data)
     local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
     local real_file = vim.fn.filereadable(data.file) == 1
-    local real_directory = vim.fn.isdirectory(data.file) == 1
 
-    if not no_name and (real_file or real_directory) then
+    if not no_name and real_file then
         require("nvim-tree.api").tree.toggle({
             file_file = true,
             update_root = true,

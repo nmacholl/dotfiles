@@ -1,3 +1,7 @@
+-- NetRW
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- File Navigation Numbers
 vim.opt.nu = true
 vim.opt.scrolloff = 5
