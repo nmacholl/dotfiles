@@ -24,7 +24,7 @@ vim.opt.backup = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
--- Whitespace Replacement
+-- White space Replacement
 vim.opt.list = true
 vim.opt.listchars = {
     lead = "\\u2591",
@@ -40,3 +40,8 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
 vim.opt.encoding = "utf-8"
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
+vim.opt.cmdheight = 2
+
+-- Spell
+vim.opt.spell = true
+vim.o.spelllang="en_us"
