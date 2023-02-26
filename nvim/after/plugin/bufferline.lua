@@ -1,4 +1,17 @@
 -- Setup
+function ignore_checks(buf_number, buf_numbers)
+    -- Ignore fugitive buffers
+    if string.find(vim.fn.bufname(buf_number), "^fugitive://") ~= nil then
+        return false
+    end
+    -- Ignore no_name buffers
+    if vim.fn.bufname(buf_number) == "" then
+        return false
+    end
+
+    return true
+end
+
 require("bufferline").setup{
     options = {
         show_buffer_icons = false,
@@ -16,6 +29,7 @@ require("bufferline").setup{
                 require("bufferline.groups").builtin.pinned:with({ icon = "⋄" })
             }
         },
+        custom_filter = ignore_checks
     },
 }
 

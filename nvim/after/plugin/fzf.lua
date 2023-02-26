@@ -52,6 +52,5 @@ end
 
 -- Shortcuts
 vim.api.nvim_set_keymap('n', '<leader><tab>', "<cmd>lua fzf_files()<CR>", {})
-vim.api.nvim_set_keymap('n', '<leader>gr', "<cmd>lua fzf_grep_native()<CR>", {})
-vim.api.nvim_set_keymap('n', '<leader>gw', "<cmd>lua fzf_grep_word()<CR>", {})
-vim.api.nvim_set_keymap('n', '<leader>gg', "<cmd>lua fzf_git_files()<CR>", {})
+vim.api.nvim_set_keymap('n', '<leader>fr', "<cmd>lua fzf_grep_native()<CR>", {})
+vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua fzf_git_files()<CR>", {})
