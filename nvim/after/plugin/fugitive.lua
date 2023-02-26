@@ -1,3 +1,4 @@
 -- Shortcuts
-vim.keymap.set("n", "<leader>gs", ":Git<CR>")
-vim.keymap.set("n", "<leader>gc", ":Gvdiffsplit! origin/HEAD<CR>")
+vim.keymap.set("n", "<leader>gg", ":Git<CR>")
+vim.keymap.set("n", "<leader>gm", ":Git mergetool<CR>")
+vim.keymap.set("n", "<leader>gd", ":Gdiff<CR>")
