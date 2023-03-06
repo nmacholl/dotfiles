@@ -1,11 +1,16 @@
 -- Setup
 function ignore_checks(buf_number, buf_numbers)
+    local bufname = vim.fn.bufname(buf_number)
     -- Ignore fugitive buffers
-    if string.find(vim.fn.bufname(buf_number), "^fugitive://") ~= nil then
+    if string.find(bufname, "^fugitive://") ~= nil then
         return false
     end
     -- Ignore no_name buffers
-    if vim.fn.bufname(buf_number) == "" then
+    if bufname == "" then
+        return false
+    end
+    -- Ignore NvimTree
+    if string.find(bufname, "^NvimTree") ~= nil then
         return false
     end
 
