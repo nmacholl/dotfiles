@@ -58,7 +58,8 @@ return require("packer").startup(function(use)
                 end,
             },
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
+            { "jose-elias-alvarez/null-ls.nvim",  requires = { "nvim-lua/plenary.nvim" }, },
+            { "jay-babu/mason-null-ls.nvim" },
             -- Autocompletion
             { "hrsh7th/nvim-cmp" },     -- Required
             { "hrsh7th/cmp-nvim-lsp" }, -- Required
