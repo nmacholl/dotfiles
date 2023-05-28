@@ -21,7 +21,7 @@ font:
   # Point size
   normal:
     family: Hack Nerd Font
-    style: Regular
+    style: Mono
 
   size: 13.0
 

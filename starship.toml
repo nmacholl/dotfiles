@@ -1,7 +1,7 @@
 add_newline = false
 scan_timeout = 10
 format = """$directory$git_branch$status
-$python $character 
+$python $character \n
 """
 
 [character]
@@ -26,4 +26,3 @@ truncation_length = 30
 format = "[$status $common_meaning]($style)"
 style = "red"
 disabled = false
-

@@ -43,5 +43,6 @@ vim.opt.updatetime = 50
 vim.opt.cmdheight = 2
 
 -- Spell
+--
 vim.opt.spell = true
-vim.o.spelllang="en_us"
+vim.opt.spelllang = { "en_us" }
