@@ -95,7 +95,7 @@ return require("packer").startup(function(use)
 
     -- Git
     use "tpope/vim-fugitive"
-    use "airblade/vim-gitgutter"
+    use {"airblade/vim-gitgutter", branch="main"}
 
     -- Bufferline
     use "akinsho/bufferline.nvim"
