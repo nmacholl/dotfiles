@@ -40,6 +40,14 @@ return require("packer").startup(function(use)
         },
     }
 
+    -- Leap
+    use {
+        "ggandor/leap.nvim",
+        requires = {
+            "tpope/vim-repeat",
+        }
+    }
+
     -- Lualine
     use "nvim-lualine/lualine.nvim"
 

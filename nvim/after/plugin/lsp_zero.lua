@@ -54,14 +54,14 @@ cmp.setup({
     },
     formatting = {
         format = require("lspkind").cmp_format({
-            mode = "symbol_text",
-            maxwidth = 60,
-            ellipsis_char = "...",
+            mode = "symbol",
+            maxwidth = 50,
+            ellipsis_char = "…",
         })
     },
     mapping = {
         -- `Enter` key to confirm completion
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
 
         -- Ctrl+Space to trigger completion menu
         ["<C-Space>"] = cmp.mapping.complete(),
@@ -96,15 +96,15 @@ cmp.setup.cmdline(':', {
 -- LSP Signs
 vim.fn.sign_define(
     "DiagnosticSignError",
-    { texthl = "DiagnosticSignError", text = "", numhl = "DiagnosticSignError" }
+    { texthl = "DiagnosticSignError", text = "❯", numhl = "DiagnosticSignError" }
 )
 vim.fn.sign_define(
     "DiagnosticSignWarn",
-    { texthl = "DiagnosticSignWarn", text = "", numhl = "DiagnosticSignWarn" }
+    { texthl = "DiagnosticSignWarn", text = "❯", numhl = "DiagnosticSignWarn" }
 )
 vim.fn.sign_define(
     "DiagnosticSignHint",
-    { texthl = "DiagnosticSignHint", text = "", numhl = "DiagnosticSignHint" }
+    { texthl = "DiagnosticSignHint", text = "✦", numhl = "DiagnosticSignHint" }
 )
 vim.fn.sign_define(
     "DiagnosticSignInformation",

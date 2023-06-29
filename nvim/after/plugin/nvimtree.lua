@@ -1,7 +1,7 @@
 -- Setup
 require("nvim-tree").setup(
     {
-        sync_root_with_cwd = false,
+        sync_root_with_cwd = true,
         reload_on_bufenter = true,
         renderer = {
             icons = {

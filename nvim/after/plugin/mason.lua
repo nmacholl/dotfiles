@@ -62,5 +62,5 @@ require("mason-null-ls").setup({
 require("null-ls").setup({
     sources = {},
     diagnostics_format = "[#{s}] #{m}",
-    update_in_insert = true,
+    update_in_insert = false,
 })

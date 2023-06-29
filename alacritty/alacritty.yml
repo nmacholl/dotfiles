@@ -18,11 +18,11 @@ window:
     multiplier: 3
 
 font:
-  # Point size
   normal:
-    family: "Hack Nerd Font Mono"
+    family: "Hasklug Nerd Font Mono"
 
-  size: 13.0
+  # Point size
+  size: 14.0
 
 # Selenized Black
 colors:
