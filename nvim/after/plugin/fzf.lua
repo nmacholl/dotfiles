@@ -7,10 +7,8 @@ require('fzf-lua').setup{
 }
 
 function fzf_files()
-    local cwd = vim.fn.getcwd()
     require('fzf-lua').files(
         {
-            cwd = cwd,
             noremap = true,
             slient = true,
         }
@@ -18,10 +16,8 @@ function fzf_files()
 end
 
 function fzf_grep_native()
-    local cwd = vim.fn.getcwd()
     require('fzf-lua').live_grep_resume(
         {
-            cwd = cwd,
             noremap = true,
             slient = true,
         }
@@ -29,10 +25,8 @@ function fzf_grep_native()
 end
 
 function fzf_git_files()
-    local cwd = vim.fn.getcwd()
     require('fzf-lua').git_files(
         {
-            cwd = cwd,
             noremap = true,
             slient = true,
         }
@@ -40,10 +34,8 @@ function fzf_git_files()
 end
 
 function fzf_grep_word()
-    local cwd = vim.fn.getcwd()
     require('fzf-lua').grep_cword(
         {
-            cwd = cwd,
             noremap = true,
             slient = true,
         }

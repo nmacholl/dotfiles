@@ -33,6 +33,11 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  -- Required for autopairs line up correctly
+  indent = {
+    enable = true
+  }
 }
 
 -- Configuration

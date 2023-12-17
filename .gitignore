@@ -1,2 +1,8 @@
 # Packer Compiled
 nvim/plugin
+
+# Spell Files
+nvim/spell
+
+# Tmux Plugin
+tmux/plugins
