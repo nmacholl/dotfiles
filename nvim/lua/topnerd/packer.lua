@@ -27,7 +27,6 @@ return require("packer").startup(function(use)
     use "mbbill/undotree"
 
     -- Fuzzy Finder
-    -- use  { "junegunn/fzf", run = "./install --bin", }
     use { "ibhagwan/fzf-lua",
         requires = { "nvim-tree/nvim-web-devicons" }
     }
