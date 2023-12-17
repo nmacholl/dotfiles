@@ -17,34 +17,39 @@ function ignore_checks(buf_number, buf_numbers)
     return true
 end
 
-require("bufferline").setup{
+require("bufferline").setup({
     options = {
-        show_buffer_icons = false,
+        show_buffer_icons = true,
         show_buffer_close_icons = false,
         diagnostics = "nvim_lsp",
         enforce_regular_tabs = true,
         sort_by = "relative_directory",
+        indicator = {
+            icon = "▌",
+            style = "icon",
+        },
         hover = {
             enabled = true,
             delay = 200,
-            reveal = {'close'},
+            reveal = { "close" },
         },
         groups = {
             items = {
-                require("bufferline.groups").builtin.pinned:with({ icon = "⋄" })
-            }
+                require("bufferline.groups").builtin.pinned:with({ icon = "⋄" }),
+            },
         },
-        custom_filter = ignore_checks
+        separator_style = "thick",
+        custom_filter = ignore_checks,
     },
-}
+})
 
 -- Shortcuts
 vim.keymap.set("n", "<leader>p", ":BufferLineTogglePin<CR>")
 
-vim.keymap.set("n", "<leader>wh", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>wl", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<leader>wk", ":BufferLineGoToBuffer -1<CR>")
-vim.keymap.set("n", "<leader>wj", ":BufferLineGoToBuffer 1<CR>")
+vim.keymap.set("n", "<leader>wj", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<leader>wk", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>wl", ":BufferLineGoToBuffer -1<CR>")
+vim.keymap.set("n", "<leader>wh", ":BufferLineGoToBuffer 1<CR>")
 vim.keymap.set("n", "<leader>w", ":BufferLinePick<CR>")
 
 vim.keymap.set("n", "<leader>qh", ":BufferLineCloseLeft<CR>")

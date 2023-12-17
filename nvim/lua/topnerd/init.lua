@@ -1,3 +1,3 @@
-require("topnerd.remap")
-require("topnerd.settings")
 require("topnerd.packer")
+require("topnerd.settings")
+require("topnerd.remap")

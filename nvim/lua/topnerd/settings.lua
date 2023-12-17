@@ -1,6 +1,15 @@
 -- NetRW
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 0
+vim.g.loaded_netrwPlugin = 0
+
+-- Python Provider
+vim.g.python3_host_prog = "/Users/nmacholl/.pyenv/versions/neovim/bin/python3"
+
+-- Ruby Provider
+vim.g.loaded_ruby_provider = 0
+
+-- Perl Provider
+vim.g.loaded_perl_provider = 0
 
 -- File Navigation Numbers
 vim.opt.nu = true

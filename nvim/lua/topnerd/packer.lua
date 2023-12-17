@@ -1,110 +1,123 @@
 return require("packer").startup(function(use)
     -- Packer
-    use "wbthomason/packer.nvim"
+    use("wbthomason/packer.nvim")
 
     -- Tree Sitter
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
-    use "nvim-treesitter/nvim-treesitter-context"
-
-    -- NVIM Tree
-    use { "nvim-tree/nvim-tree.lua",
-        requires = {
-            "nvim-tree/nvim-web-devicons", -- optional, for file icons
-        },
-        tag = "nightly"                    -- optional, updated every week. (see issue #1193)
-    }
-
-    -- Aerial
-    use "stevearc/aerial.nvim"
-
-    -- Autopairs
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
-    -- Undo Tree
-    use "mbbill/undotree"
-
-    -- Fuzzy Finder
-    use { "ibhagwan/fzf-lua",
-        requires = { "nvim-tree/nvim-web-devicons" }
-    }
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/nvim-treesitter-context")
 
     -- Color Theme
-    use {
+    use({
         "loganswartz/selenized.nvim",
         requires = {
             "rktjmp/lush.nvim",
         },
-    }
+    })
 
-    -- Leap
-    use {
-        "ggandor/leap.nvim",
+    -- NVIM Tree
+    use({
+        "nvim-tree/nvim-tree.lua",
         requires = {
-            "tpope/vim-repeat",
-        }
-    }
+            "nvim-tree/nvim-web-devicons",
+        },
+    })
 
-    -- Lualine
-    use "nvim-lualine/lualine.nvim"
+    -- Lua Line
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    })
+
+    -- Buffer Line
+    use({
+        "akinsho/bufferline.nvim",
+        tag = "*",
+        requires = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    })
+
+    -- Git
+    use({
+        "tpope/vim-fugitive",
+    })
+    use({
+        "airblade/vim-gitgutter",
+        branch = "main",
+    })
+
+    -- Aerial
+    use({
+        "stevearc/aerial.nvim",
+    })
+
+    -- FZF
+    use({
+        "ibhagwan/fzf-lua",
+        requires = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    })
+
+    -- Mundo
+    use({
+        "simnalamburt/vim-mundo",
+    })
+
+    -- Autopairs
+    use({
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup({})
+        end,
+    })
+
+    -- Copilot
+    use({
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
+    })
+    use({
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    })
 
     -- LSP
-    use {
+    use({
         "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
+        branch = "v3.x",
         requires = {
-            -- LSP Support
-            { "neovim/nvim-lspconfig" }, -- Required
-            {
-                -- Optional
-                "williamboman/mason.nvim",
-                run = function()
-                    pcall(vim.cmd, "MasonUpdate")
-                end,
-            },
-            { "williamboman/mason-lspconfig.nvim" }, -- Optional
-            { "jose-elias-alvarez/null-ls.nvim",  requires = { "nvim-lua/plenary.nvim" }, },
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
+            -- Null LS
+            { "nvimtools/none-ls.nvim", requires = { "nvim-lua/plenary.nvim" } },
             { "jay-babu/mason-null-ls.nvim" },
+            -- LSP Support
+            { "neovim/nvim-lspconfig" },
             -- Autocompletion
-            { "hrsh7th/nvim-cmp" },     -- Required
-            { "hrsh7th/cmp-nvim-lsp" }, -- Required
-            { "L3MON4D3/LuaSnip" },     -- Required
-            -- Sources
+            { "hrsh7th/nvim-cmp" },
+            { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-cmdline" },
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-nvim-lua" },
             { "hrsh7th/cmp-path" },
+            { "L3MON4D3/LuaSnip" },
             { "f3fora/cmp-spell" },
             { "onsails/lspkind.nvim" },
-        }
-    }
-
-    -- LSP Completion
-    use {
-        "hrsh7th/nvim-cmp",
-    }
-
-    -- LSP Sources
-    use {
-        "petertriho/cmp-git",
-        "hrsh7th/cmp-omni",
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-path",
-    }
-
-    -- Snippet
-    use {
-        "hrsh7th/vim-vsnip",
-        "hrsh7th/cmp-vsnip",
-    }
-
-    -- Git
-    use "tpope/vim-fugitive"
-    use {"airblade/vim-gitgutter", branch="main"}
-
-    -- Bufferline
-    use "akinsho/bufferline.nvim"
-end
-)
+            -- Comparator
+            { "lukas-reineke/cmp-under-comparator" },
+        },
+    })
+end)

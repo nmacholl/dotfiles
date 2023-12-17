@@ -1,37 +1,35 @@
 -- Setup
-require("nvim-tree").setup(
-    {
-        sync_root_with_cwd = true,
-        reload_on_bufenter = true,
-        renderer = {
-            icons = {
-                git_placement = "after",
-                show = {
-                    modified = false,
-                },
-                glyphs = {
-                    git = {
-                        unstaged="○",
-                        staged="◉",
-                        unmerged="",
-                        renamed="",
-                        untracked="◌",
-                        deleted="",
-                        ignored="",
-                    },
+require("nvim-tree").setup({
+    sync_root_with_cwd = true,
+    reload_on_bufenter = true,
+    renderer = {
+        icons = {
+            git_placement = "after",
+            show = {
+                modified = false,
+            },
+            glyphs = {
+                git = {
+                    unstaged = "○",
+                    staged = "◉",
+                    unmerged = "",
+                    renamed = "",
+                    untracked = "◌",
+                    deleted = "",
+                    ignored = "",
                 },
             },
-            indent_width = 1,
         },
-        view = {
-            width = 50,
-        },
-        update_focused_file = {
-            enable = true,
-            update_root = false,
-        }
-    }
-)
+        indent_width = 1,
+    },
+    view = {
+        width = 50,
+    },
+    update_focused_file = {
+        enable = true,
+        update_root = true,
+    },
+})
 
 -- Shortcuts
 vim.keymap.set("n", "<C-n>", ":NvimTreeFocus<CR>")
