@@ -38,4 +38,5 @@ end
 -- Shortcuts
 vim.api.nvim_set_keymap("n", "<leader><tab>", "<cmd>lua fzf_files()<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fr", "<cmd>lua fzf_grep_native()<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fR", "<cmd>lua fzf_grep_word()<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua fzf_git_files()<CR>", { silent = true })

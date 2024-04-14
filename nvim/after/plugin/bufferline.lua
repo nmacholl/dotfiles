@@ -35,7 +35,7 @@ require("bufferline").setup({
         },
         groups = {
             items = {
-                require("bufferline.groups").builtin.pinned:with({ icon = "⋄" }),
+                require("bufferline.groups").builtin.pinned:with({ icon = "" }),
             },
         },
         separator_style = "thick",
@@ -46,15 +46,13 @@ require("bufferline").setup({
 -- Shortcuts
 vim.keymap.set("n", "<leader>p", ":BufferLineTogglePin<CR>")
 
-vim.keymap.set("n", "<leader>wj", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>wk", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<leader>wl", ":BufferLineGoToBuffer -1<CR>")
-vim.keymap.set("n", "<leader>wh", ":BufferLineGoToBuffer 1<CR>")
 vim.keymap.set("n", "<leader>w", ":BufferLinePick<CR>")
+vim.keymap.set("n", "<leader>wh", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<leader>wl", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>wH", ":BufferLineGoToBuffer 1<CR>")
+vim.keymap.set("n", "<leader>wL", ":BufferLineGoToBuffer -1<CR>")
 
-vim.keymap.set("n", "<leader>qh", ":BufferLineCloseLeft<CR>")
-vim.keymap.set("n", "<leader>ql", ":BufferLineCloseRight<CR>")
-vim.keymap.set("n", "<leader>qk", ":BufferLineGoToBuffer -1<CR>:BufferLineCloseLeft<CR>")
-vim.keymap.set("n", "<leader>qj", ":BufferLineGoToBuffer 1<CR>:BufferLineCloseRight<CR>")
-vim.keymap.set("n", "<leader>ql", ":BufferLineCloseRight<CR>")
 vim.keymap.set("n", "<leader>q", ":BufferLinePickClose<CR>")
+vim.keymap.set("n", "<leader>Q", ":BufferLineCloseOthers<CR>")
+vim.keymap.set("n", "<leader>qH", ":BufferLineCloseLeft<CR>")
+vim.keymap.set("n", "<leader>qL", ":BufferLineCloseRight<CR>")
