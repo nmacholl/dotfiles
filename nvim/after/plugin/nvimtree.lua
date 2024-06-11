@@ -26,12 +26,11 @@ require("nvim-tree").setup({
         width = 50,
     },
     update_focused_file = {
-        enable = true,
+        enable = false,
         update_root = false,
     },
 })
 
 -- Shortcuts
-vim.keymap.set("n", "<C-n>", ":NvimTreeFocus<CR>")
-vim.keymap.set("n", "<C-t>", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>")
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>n", ":NvimTreeFindFile<CR>")

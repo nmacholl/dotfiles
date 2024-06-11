@@ -1,6 +1,6 @@
 -- Setup
 vim.g.mundo_width = 50
-vim.g.mundo_right = true
+vim.g.mundo_right = false
 vim.g.mundo_playback_delay = 120
 
 -- Shortcuts

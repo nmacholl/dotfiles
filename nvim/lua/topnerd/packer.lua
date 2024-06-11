@@ -74,6 +74,38 @@ return require("packer").startup(function(use)
         end,
     })
 
+    -- LSP
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+
+    --Autocomplete
+    use {
+        { "hrsh7th/nvim-cmp" },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "hrsh7th/cmp-cmdline" },
+        { "hrsh7th/cmp-buffer" },
+        { "hrsh7th/cmp-nvim-lua" },
+        { "hrsh7th/cmp-path" },
+        { "L3MON4D3/LuaSnip" },
+        { "f3fora/cmp-spell" },
+        { "onsails/lspkind.nvim" },
+        -- Comparator
+        { "lukas-reineke/cmp-under-comparator" },
+    }
+
+    -- Linter
+    use {
+        "mfussenegger/nvim-lint",
+    }
+
+    -- Conform
+    use {
+        "stevearc/conform.nvim",
+    }
+
     -- Copilot
     use({
         "zbirenbaum/copilot.lua",
@@ -92,32 +124,5 @@ return require("packer").startup(function(use)
         config = function()
             require("copilot_cmp").setup()
         end,
-    })
-
-    -- LSP
-    use({
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v3.x",
-        requires = {
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
-            -- Null LS
-            { "nvimtools/none-ls.nvim", requires = { "nvim-lua/plenary.nvim" } },
-            { "jay-babu/mason-null-ls.nvim" },
-            -- LSP Support
-            { "neovim/nvim-lspconfig" },
-            -- Autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-cmdline" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-nvim-lua" },
-            { "hrsh7th/cmp-path" },
-            { "L3MON4D3/LuaSnip" },
-            { "f3fora/cmp-spell" },
-            { "onsails/lspkind.nvim" },
-            -- Comparator
-            { "lukas-reineke/cmp-under-comparator" },
-        },
     })
 end)
