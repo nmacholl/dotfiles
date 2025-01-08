@@ -3,7 +3,7 @@ vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 
 -- Python Provider
-vim.g.python3_host_prog = "/Users/nmacholl/.pyenv/versions/neovim/bin/python3"
+vim.g.python3_host_prog = "~/.pyenv/versions/neovim/bin/python3"
 
 -- Ruby Provider
 vim.g.loaded_ruby_provider = 0
