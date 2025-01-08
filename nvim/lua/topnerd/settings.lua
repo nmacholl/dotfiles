@@ -23,7 +23,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- Backspace
-vim.opt.backspace="indent,eol,start"
+vim.opt.backspace = "indent,eol,start"
 
 -- Disable Backups/Swaps
 vim.opt.swapfile = false
@@ -47,7 +47,6 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
 
 -- Misc
 vim.opt.encoding = "utf-8"
-vim.opt.termguicolors = true
 vim.opt.updatetime = 50
 vim.opt.cmdheight = 2
 
