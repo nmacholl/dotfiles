@@ -1,4 +1,4 @@
-theme = "solarized_dark"
+theme = "term16_dark"
 
 [editor]
 mouse = true
@@ -15,7 +15,7 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = false
+hidden = true
 
 [editor.statusline]
 left = ["mode", "spinner"]
@@ -45,6 +45,3 @@ nnbsp = "␣"
 tab = "→"
 newline = "⏎"
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
-
-[keys.insert]
-C-c = "normal_mode" # This will get me cancelled
