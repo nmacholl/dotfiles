@@ -1,22 +1,35 @@
 ### OPTIONS
-# GNU Readline Shortcuts
 use readline-binding
+use platform
 
-### Environemnt (mostly PATH)
-# Homebrew
-var HOMEBREW_PATH = /opt/homebrew/bin
-
-## Docker
-var DOCKER_PATH = /Applications/Docker.app/Contents/Resources/bin
-
-## LLVM
-var LLVM_PATH = /opt/homebrew/opt/llvm/bin
-
-## MYSQL
-var MYSQL_PATH = /opt/homebrew/opt/mysql@8.4/bin
-
-## Locals
+### Environment (mostly PATH)
 var LOCAL_PATH = $E:HOME/.local/bin
+
+# Pyenv
+set E:PYENV_SHELL = elvish
+var PYENV_SHIMS = $E:HOME/.pyenv/shims
+
+# Platform Specific
+if (==s $platform:os "darwin") {
+  # Homebrew
+  var HOMEBREW_PATH = /opt/homebrew/bin
+  var DOCKER_PATH = /Applications/Docker.app/Contents/Resources/bin
+  var LLVM_PATH = /opt/homebrew/opt/llvm/bin
+
+  set paths = [
+    $PYENV_SHIMS
+    $HOMEBREW_PATH
+    $DOCKER_PATH
+    $LLVM_PATH
+    $LOCAL_PATH
+    $@paths
+  ]
+} else {
+  set paths = [
+    $LOCAL_PATH
+    $@paths    
+  ] 
+}
 
 # Editor
 set E:EDITOR = hx
@@ -27,21 +40,6 @@ fn grep {|@a| e:grep --color=always $@a }
 fn egrep {|@a| e:egrep --color-always $@a }
 fn fgrep {|@a| e:fgrep --color-always $@a }
 
-# Pyenv (DOES NOT WORK)
-set E:PYENV_SHELL = elvish
-var PYENV_SHIMS = $E:HOME/.pyenv/shims
-
-# Set paths
-set paths = [
-  $PYENV_SHIMS
-  $HOMEBREW_PATH
-  $DOCKER_PATH
-  $LLVM_PATH
-  $MYSQL_PATH
-  $LOCAL_PATH
-  $@paths
-]
-
 ### Shell Integrations 
 
 # Carapace
@@ -51,7 +49,11 @@ eval (carapace _carapace|slurp)
 
 # Starship
 # A nice prompt that includes git information
-eval (/opt/homebrew/bin/starship init elvish --print-full-init | slurp)
+if (==s $platform:os "darwin") {
+  eval (/opt/homebrew/bin/starship init elvish --print-full-init | slurp)
+} else {
+  eval (/usr/local/bin/starship init elvish --print-full-init | slurp)
+}
 
 # Terminal Multiplex
 # Essential multitasking

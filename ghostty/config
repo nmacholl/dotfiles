@@ -1,3 +1,5 @@
-command = /opt/homebrew/bin/elvish
+command = /usr/bin/env elvish
 theme = Solarized Dark Higher Contrast
 font-size = 15
+
+keybind = f11=toggle_fullscreen
