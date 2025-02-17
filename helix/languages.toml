@@ -3,8 +3,8 @@ name = "python"
 scope = "source.python"
 injection-regex = "python"
 file-types = ["py","pyi","py3","pyw",".pythonstartup",".pythonrc"]
-shebangs = ["python"]
-roots = [".", "pyproject.toml", "pyrightconfig.json"]
+shebangs = ["python", "python3"]
+roots = ["pyproject.toml", "pyrightconfig.json"]
 comment-token = "#"
 language-servers = ["pyright", "ruff"]
 indent = { tab-width = 4, unit = "    " }
@@ -13,13 +13,14 @@ auto-format = true
 [language.formatter]
 command = "black"
 args = [
-  "-",
   "--quiet",
+  "-",
 ]
 
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
+required-root-patterns = ["pyproject.toml", "setup.py", "pyrightconfig.json"]
 
 [language-server.pyright.config]
 reportMissingTypeStubs = false
@@ -29,7 +30,8 @@ typeCheckingMode = "basic"
 autoImportCompletions = true
 
 [language-server.ruff]
-command = "ruff-lsp"
+command = "ruff"
+args = ["server"]
 
 [language-server.ruff.config]
 settings = {args = []}

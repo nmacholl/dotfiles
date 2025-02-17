@@ -8,6 +8,7 @@ var LOCAL_PATH = $E:HOME/.local/bin
 # Pyenv
 set E:PYENV_SHELL = elvish
 var PYENV_SHIMS = $E:HOME/.pyenv/shims
+var PYENV_PATH = $E:HOME/.pyenv/bin
 
 # Platform Specific
 if (==s $platform:os "darwin") {
@@ -21,11 +22,14 @@ if (==s $platform:os "darwin") {
     $HOMEBREW_PATH
     $DOCKER_PATH
     $LLVM_PATH
+    $PYENV_PATH
     $LOCAL_PATH
     $@paths
   ]
 } else {
   set paths = [
+    $PYENV_SHIMS
+    $PYENV_PATH
     $LOCAL_PATH
     $@paths    
   ] 
