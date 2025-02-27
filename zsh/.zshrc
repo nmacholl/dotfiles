@@ -1,6 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
+# Locals
+export PATH="/Users/nmacholl/.local/bin:$PATH"
+
+# cargo
+. "$HOME/.cargo/env"
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -131,4 +140,8 @@ function y() {
 
 # Syntax Highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ $PLATFORM = "Linux" ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ $PLATFORM = "Darwin" ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi

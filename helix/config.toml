@@ -6,6 +6,9 @@ line-number = "absolute"
 bufferline = "always"
 popup-border = "all"
 
+[editor.soft-wrap]
+enable = true
+
 [editor.gutters]
 layout = ["diff", "diagnostics", "line-numbers", "spacer"]
 
@@ -15,27 +18,27 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = true
+hidden = false
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name"]
+center = ["read-only-indicator", "file-name"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor.lsp]
 enable = true
-display-messages=true
-display-inlay-hints=true
+display-messages = true
+display-inlay-hints = false
+display-progress-messages = true
 
 [editor.whitespace.render]
 space = "all"
 tab = "all"
-nbsp = "none"
-nnbsp = "none"
+nbsp = "all"
+nnbsp = "all"
 newline = "none"
 
 [editor.whitespace.characters]

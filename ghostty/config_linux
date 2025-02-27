@@ -1,5 +1,6 @@
 command = /usr/bin/zsh
 theme = Solarized Dark Higher Contrast
 font-size = 13
+mouse-hide-while-typing = true
 
 keybind = f11=toggle_fullscreen

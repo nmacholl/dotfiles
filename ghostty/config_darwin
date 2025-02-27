@@ -1,5 +1,7 @@
 command = /opt/homebrew/bin/zsh
 theme = Solarized Dark Higher Contrast
 font-size = 15
+mouse-hide-while-typing = true
+bold-is-bright = true
 
 keybind = f11=toggle_fullscreen
