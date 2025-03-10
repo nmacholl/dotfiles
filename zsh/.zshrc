@@ -7,6 +7,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Locals
 export PATH="/Users/nmacholl/.local/bin:$PATH"
 
+# LLVM
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 # cargo
 . "$HOME/.cargo/env"
 
@@ -80,7 +83,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf ssh sudo zsh-interactive-cd)
+plugins=(git fzf ssh sudo)
 
 source $ZSH/oh-my-zsh.sh
 
