@@ -10,10 +10,11 @@ language-servers = ["pyright", "ruff"]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
+
 [language.formatter]
-command = "black"
+command = "ruff"
 args = [
-  "--quiet",
+  "format",
   "-",
 ]
 
@@ -62,3 +63,13 @@ inlayHints.closureReturnTypeHints.enable = "with_block"
 inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
 inlayHints.typeHints.hideClosureInitialization = false
+
+[[language]]
+name = "zig"
+auto-format = true
+
+[language-server.zls.config]
+enable_build_on_save = true
+enable_autofix = false
+warn_style = true
+highlight_global_var_declarations = true

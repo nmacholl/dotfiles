@@ -148,3 +148,10 @@ if [ $PLATFORM = "Linux" ]; then
 elif [ $PLATFORM = "Darwin" ]; then
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# Project Directory
+if [ $PLATFORM = "Linux" ]; then
+  export PROJECTS="/repos"
+elif [ $PLATFORM = "Darwin" ]; then
+  export PROJECTS="$HOME/Projects"
+fi
