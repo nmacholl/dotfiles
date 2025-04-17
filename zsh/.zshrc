@@ -1,14 +1,25 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Compilation flags
+export PLATFORM="$(uname -s)"
+export ARCHFLAGS="-arch $(uname -m)"
+
 # Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
+if [ $PLATFORM = "Darwin" ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 # Locals
 export PATH="/Users/nmacholl/.local/bin:$PATH"
 
 # LLVM
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+# PyEnv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # cargo
 . "$HOME/.cargo/env"
@@ -100,10 +111,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='hx'
 fi
-
-# Compilation flags
-export PLATFORM="$(uname -s)"
-export ARCHFLAGS="-arch $(uname -m)"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
