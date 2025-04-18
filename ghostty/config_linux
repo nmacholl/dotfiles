@@ -1,6 +1,6 @@
 command = /usr/bin/zsh
 theme = Solarized Dark Higher Contrast
-font-size = 18
+font-size = 15
 mouse-hide-while-typing = true
 bold-is-bright = true
 confirm-close-surface = false
