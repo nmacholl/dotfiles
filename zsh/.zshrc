@@ -8,13 +8,11 @@ export ARCHFLAGS="-arch $(uname -m)"
 # Homebrew
 if [ $PLATFORM = "Darwin" ]; then
   export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 fi
 
 # Locals
 export PATH="/Users/nmacholl/.local/bin:$PATH"
-
-# LLVM
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -22,7 +20,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 # cargo
-. "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

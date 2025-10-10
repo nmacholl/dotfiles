@@ -5,6 +5,10 @@ mouse = true
 line-number = "absolute"
 bufferline = "always"
 popup-border = "all"
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
 
 [editor.soft-wrap]
 enable = true

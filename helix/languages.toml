@@ -69,8 +69,10 @@ inlayHints.typeHints.hideClosureInitialization = false
 name = "zig"
 auto-format = true
 
-[language-server.zls.config]
-enable_build_on_save = true
-enable_autofix = false
-warn_style = true
-highlight_global_var_declarations = true
+[language-server.jinja-lsp]
+command = "jinja-lsp"
+timeout = 5
+
+[[language]]
+name = "jinja"
+language-servers = ["jinja-lsp"]
